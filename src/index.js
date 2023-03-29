@@ -1,13 +1,49 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import './index.css';
-import App from './App';
+import Root from './routes/root';
+import SingleResponsibilityPrinciple from './routes/single-responsibility-principle';
+import OpenClosedPrinciple from './routes/open-closed-principle';
+import LiskovSubstitutionPrinciple from './routes/liskov-substitution-principle';
+import InterfaceSegregationPrinciple from './routes/interface-segregation-principle';
+import DependencyInversionPrinciple from './routes/dependency-inversion-principle';
 import reportWebVitals from './reportWebVitals';
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+  },
+  {
+    path: "/single-responsibility-principle",
+    element: <SingleResponsibilityPrinciple />,
+  },
+  {
+    path: "/open-closed-principle",
+    element: <OpenClosedPrinciple />,
+  },
+  {
+    path: "/liskov-substitution-principle",
+    element: <LiskovSubstitutionPrinciple />,
+  },
+  {
+    path: "/interface-segregation-principle",
+    element: <InterfaceSegregationPrinciple />,
+  },
+  {
+    path: "/dependency-inversion-principle",
+    element: <DependencyInversionPrinciple />,
+  },
+]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
+    {/* <App /> */}
   </React.StrictMode>
 );
 

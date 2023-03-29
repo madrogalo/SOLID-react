@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 150px;
+  width: 100%;
+  border-top: 3px solid cornflowerblue;
+  border-bottom: 3px solid cornflowerblue;
+}
